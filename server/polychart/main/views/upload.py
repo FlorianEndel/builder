@@ -57,7 +57,7 @@ def postFile(request, pdsKey, index='0'):
 
   if not os.path.exists('uploadedData/raw/'):
     os.makedirs('uploadedData/raw/')
-  with open("uploadedData/raw/%s-%s" % (pds.key, index), 'wU') as f:
+  with open("uploadedData/raw/%s-%s" % (pds.key, index), 'w') as f:
     f.write(request.body)
 
   return jsonResponse({'status': 'success'})
@@ -82,7 +82,7 @@ def previewCsv(request, key, index='0'):
 
   pds = PendingDataSource.objects.get(key=str(key), user=user)
 
-  with open("uploadedData/raw/%s-%s" % (pds.key, index), 'rU') as f:
+  with open("uploadedData/raw/%s-%s" % (pds.key, index), 'r') as f:
     parsed = parseForPreview(f, data)
     return jsonResponse(parsed)
 
