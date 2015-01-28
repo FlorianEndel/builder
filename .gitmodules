@@ -1,3 +1,4 @@
 [submodule "lib/polychart2"]
-	path = lib/polychart2
-	url = git@github.com:Polychart/polychart2.git
+  path = lib/polychart2
+  #url = git@github.com:Polychart/polychart2.git
+  url = https://github.com/Polychart/polychart2.git
